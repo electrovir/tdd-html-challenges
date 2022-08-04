@@ -21,6 +21,7 @@
     "types": "dist/index.d.ts",
     "scripts": {
         "format": "virmator format",
+        "new": "cd packages/scripts && npm run new",
         "spellcheck": "virmator spellcheck",
         "start": "npm install && virmator frontend",
         "test": "virmator test-web",
