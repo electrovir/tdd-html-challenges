@@ -8,6 +8,7 @@
     "author": "",
     "main": "index.js",
     "scripts": {
+        "combine": "ts-node src/scripts/combine-challenges-into-app.ts",
         "new": "ts-node src/scripts/new-challenge.ts"
     },
     "devDependencies": {

@@ -23,7 +23,7 @@
         "format": "virmator format",
         "new": "cd packages/scripts && npm run new",
         "spellcheck": "virmator spellcheck",
-        "start": "npm install && virmator frontend",
+        "start": "npm install && cd packages/scripts && npm run combine && cd - && virmator frontend",
         "test": "virmator test-web",
         "test:full": "npm test && npm run spellcheck && virmator format check && npm run update-docs -- --check"
     },
