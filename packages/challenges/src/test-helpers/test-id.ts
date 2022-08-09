@@ -1,8 +1,13 @@
 import {noChange} from 'lit';
 import {directive, Directive, ElementPartInfo, PartInfo, PartType} from 'lit/directive.js';
+import {queryThroughShadow} from './query-through-shadow';
 
 export function createTestIdSelector(testId: string) {
     return `[data-test-id="${testId}"]`;
+}
+
+export function queryByTestId(context: Element | ShadowRoot, testId: string) {
+    return queryThroughShadow(context, createTestIdSelector(testId));
 }
 
 export const assignTestId = directive(

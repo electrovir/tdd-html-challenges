@@ -6,3 +6,8 @@ export function typedAssertInstanceOf<InstanceOfGeneric>(
 ): asserts valueToCheck is InstanceOfGeneric {
     assert.instanceOf(valueToCheck, constructor);
 }
+
+export function assertNotNullish<T>(valueToCheck: T): asserts valueToCheck is NonNullable<T> {
+    assert.isNotNull(valueToCheck);
+    assert.isDefined(valueToCheck);
+}
