@@ -19,12 +19,6 @@ describe(Vir_2022_08_04.tagName, () => {
         await clickElement(dateInputElement);
         await clickDatePicker(dateInputElement);
 
-        console.log({
-            valueAsDate: dateInputElement.valueAsDate,
-            value: dateInputElement.valueAsDate,
-        });
-        console.log(dateInputElement);
-
         await clickDatePicker(dateInputElement);
 
         // this doesn't work
