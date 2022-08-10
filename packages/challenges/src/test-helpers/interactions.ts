@@ -9,13 +9,21 @@ function getCenterOfElement(element: Element): [number, number] {
     ];
 }
 
-export async function clickElement(element: Element): Promise<void> {
+async function sendMouseToMiddleOfElement(
+    element: Element,
+    operationType: 'click' | 'move',
+): Promise<void> {
     await sendMouse({
         position: getCenterOfElement(element),
-        type: 'click',
+        type: operationType,
     });
 }
 
+export async function clickElement(element: Element): Promise<void> {
+    return sendMouseToMiddleOfElement(element, 'click');
+}
+
+// this doesn't work
 export async function clickDatePicker(triggerElement: HTMLInputElement): Promise<void> {
     await clickElement(triggerElement);
     await wait(100);
@@ -27,4 +35,8 @@ export async function clickDatePicker(triggerElement: HTMLInputElement): Promise
         ],
         type: 'click',
     });
+}
+
+export async function moveToElement(element: Element): Promise<void> {
+    return sendMouseToMiddleOfElement(element, 'move');
 }

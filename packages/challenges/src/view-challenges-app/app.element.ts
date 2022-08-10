@@ -1,9 +1,29 @@
-import {defineFunctionalElement, html} from 'element-vir';
-import {Vir_2022_08_04} from '../challenges/vir-2022-08-04.element';
+import {css, defineFunctionalElement} from 'element-vir';
+import {html} from 'lit';
+import {unsafeHTML} from 'lit/directives/unsafe-html.js';
+import {allChallenges} from './all-challenges';
 
 export const VirChallengesApp = defineFunctionalElement({
     tagName: 'vir-challenges-app',
+    styles: css`
+        :host {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+    `,
     renderCallback: () => {
-        return html`<${Vir_2022_08_04}></${Vir_2022_08_04}>`;
+        console.log(allChallenges.map((challenge) => challenge.element.tagName));
+        return html`
+            ${allChallenges.map((challenge) => {
+                const thing = `<${challenge.element.tagName}></${challenge.element.tagName}>`;
+                return html`
+                    <div class="element-test">
+                        <h2>${challenge.element.tagName}</h2>
+                        ${unsafeHTML(thing)}
+                    </div>
+                `;
+            })}
+        `;
     },
 });
