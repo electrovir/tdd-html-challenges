@@ -1,6 +1,6 @@
 import {fixture as renderFixture} from '@open-wc/testing';
 import {html} from 'element-vir';
-import {typedAssertInstanceOf} from './test-helpers/typed-assert';
+import {typedAssertInstanceOf} from '../test-helpers/typed-assert';
 import {Vir_put_date_here} from './vir-put-date-here.element';
 
 describe(Vir_put_date_here.tagName, () => {
