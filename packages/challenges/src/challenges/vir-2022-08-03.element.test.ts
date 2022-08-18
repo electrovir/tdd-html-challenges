@@ -28,7 +28,7 @@ describe(Vir_2022_08_03.tagName, () => {
         const endWaitingTime: number = Date.now();
         const waitDuration = endWaitingTime - startWaitingTime;
 
-        assert.isAtMost(waitDuration, 1200, 'wait duration was longer than expected');
+        assert.isAtMost(waitDuration, 1300, 'wait duration was longer than expected');
 
         assert.strictEqual(extractText(rendered), updatedGreeting);
     });
