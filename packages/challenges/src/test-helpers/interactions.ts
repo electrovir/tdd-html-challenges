@@ -36,7 +36,6 @@ export async function typeString(input: string): Promise<void> {
 
 export async function deleteAllTextInInput(inputElement: HTMLInputElement): Promise<void> {
     const lastValue = inputElement.value;
-    console.log({lastValue});
     if (lastValue) {
         if (!inputElement.matches(':focus')) {
             console.error('not focused');

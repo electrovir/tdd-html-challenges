@@ -5,7 +5,7 @@ export const Vir_2022_08_10 = defineFunctionalElement({
     props: {},
     renderCallback: () => {
         return html`
-            HELLO THEREfffffffffffffffffffff
+            HELLO THERE
         `;
     },
 });
