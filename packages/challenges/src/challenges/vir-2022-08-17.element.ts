@@ -6,8 +6,8 @@ export const elementTestIds = {
     triggerButton: 'trigger-button',
 };
 
-export const Vir_2022_08_18 = defineFunctionalElement({
-    tagName: 'vir-2022-08-18',
+export const Vir_2022_08_17 = defineFunctionalElement({
+    tagName: 'vir-2022-08-17',
     props: {
         shouldShow: false,
     },

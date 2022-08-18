@@ -4,12 +4,12 @@ import {clickElement} from '../test-helpers/interactions';
 import {assertVisible} from '../test-helpers/test-element';
 import {queryByTestId} from '../test-helpers/test-id';
 import {typedAssertInstanceOf} from '../test-helpers/typed-assert';
-import {Vir_2022_08_18} from './vir-2022-08-18.element';
+import {Vir_2022_08_17} from './vir-2022-08-17.element';
 
-describe(Vir_2022_08_18.tagName, () => {
+describe(Vir_2022_08_17.tagName, () => {
     async function renderElementToTest() {
         const rendered = await renderFixture(html`
-            <${Vir_2022_08_18}></${Vir_2022_08_18}>
+            <${Vir_2022_08_17}></${Vir_2022_08_17}>
         `);
 
         typedAssertInstanceOf(rendered, HTMLElement);
