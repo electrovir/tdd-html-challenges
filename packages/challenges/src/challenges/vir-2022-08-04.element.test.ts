@@ -10,7 +10,10 @@ describe(Vir_2022_08_04.tagName, () => {
     it('should update the date', async () => {
         const rendered = await renderFixture(html`<${Vir_2022_08_04}></${Vir_2022_08_04}>`);
 
-        const dateInputElement = queryThroughShadow(rendered, createTestIdSelector('date-picker'));
+        const dateInputElement = queryThroughShadow({
+            element: rendered,
+            query: createTestIdSelector('date-picker'),
+        });
 
         typedAssertInstanceOf(dateInputElement, HTMLInputElement);
 

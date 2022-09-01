@@ -34,6 +34,17 @@ export async function typeString(input: string): Promise<void> {
     });
 }
 
+export async function typeStringIntoElement(
+    input: string,
+    inputElement: HTMLInputElement,
+): Promise<void> {
+    if (!inputElement.matches(':focus')) {
+        await clickElement(inputElement);
+    }
+
+    await typeString(input);
+}
+
 export async function deleteAllTextInInput(inputElement: HTMLInputElement): Promise<void> {
     const lastValue = inputElement.value;
     if (lastValue) {

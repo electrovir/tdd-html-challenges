@@ -7,7 +7,7 @@ export function createTestIdSelector(testId: string) {
 }
 
 export function queryByTestId(context: Element | ShadowRoot, testId: string) {
-    return queryThroughShadow(context, createTestIdSelector(testId));
+    return queryThroughShadow({element: context, query: createTestIdSelector(testId)});
 }
 
 export const assignTestId = directive(
