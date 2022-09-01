@@ -1,8 +1,8 @@
-import {defineFunctionalElement, html} from 'element-vir';
+import {defineElementNoInputs, html} from 'element-vir';
 
-export const Vir_put_date_here = defineFunctionalElement({
+export const Vir_put_date_here = defineElementNoInputs({
     tagName: 'vir-put-date-here',
-    props: {},
+    stateInit: {},
     renderCallback: () => {
         return html``;
     },

@@ -1,3 +1,4 @@
+import {assert, nextFrame} from '@open-wc/testing';
 import {sendKeys, sendMouse} from '@web/test-runner-commands';
 import {wait} from 'augment-vir';
 
@@ -38,9 +39,18 @@ export async function typeStringIntoElement(
     input: string,
     inputElement: HTMLInputElement,
 ): Promise<void> {
-    if (!inputElement.matches(':focus')) {
-        await clickElement(inputElement);
+    let attempts = 0;
+    const maxAttempts = 20;
+    while (!inputElement.matches(':focus') && attempts < maxAttempts) {
+        attempts++;
+        if (!inputElement.matches(':focus')) {
+            await clickElement(inputElement);
+        }
+        if (!inputElement.matches(':focus')) {
+            await nextFrame();
+        }
     }
+    assert(attempts < maxAttempts, `tried ${maxAttempts} times to select element ${inputElement}`);
 
     await typeString(input);
 }

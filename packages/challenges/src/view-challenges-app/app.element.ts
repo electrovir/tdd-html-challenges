@@ -1,9 +1,9 @@
-import {css, defineFunctionalElement} from 'element-vir';
+import {css, defineElementNoInputs} from 'element-vir';
 import {html} from 'lit';
 import {unsafeHTML} from 'lit/directives/unsafe-html.js';
 import {allChallenges} from './all-challenges';
 
-export const VirChallengesApp = defineFunctionalElement({
+export const VirChallengesApp = defineElementNoInputs({
     tagName: 'vir-challenges-app',
     styles: css`
         :host {

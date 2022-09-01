@@ -1,4 +1,4 @@
-import {FunctionalElement} from 'element-vir';
+import {DeclarativeElementDefinition} from 'element-vir';
 import {Vir_2022_08_03} from '../challenges/vir-2022-08-03.element';
 import {Vir_2022_08_04} from '../challenges/vir-2022-08-04.element';
 import {Vir_2022_08_05} from '../challenges/vir-2022-08-05.element';
@@ -14,7 +14,7 @@ import {Vir_2022_09_01} from '../challenges/vir-2022-09-01.element';
  */
 
 export type ChallengeDefinition = {
-    element: FunctionalElement;
+    element: DeclarativeElementDefinition;
     date: Date;
 };
 

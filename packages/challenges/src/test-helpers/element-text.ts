@@ -3,5 +3,9 @@ export function extractText(element: Element | ShadowRoot): string {
         return extractText(element.shadowRoot);
     }
 
-    return element.textContent?.trim() ?? '';
+    if (element instanceof HTMLInputElement) {
+        return element.value;
+    } else {
+        return element.textContent?.trim() ?? '';
+    }
 }

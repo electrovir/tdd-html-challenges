@@ -1,5 +1,5 @@
 import {randomString} from 'augment-vir';
-import {defineFunctionalElement, html, listen} from 'element-vir';
+import {defineElementNoInputs, html, listen} from 'element-vir';
 import {assignTestId} from '../test-helpers/test-id';
 
 export enum TestIds {
@@ -9,27 +9,27 @@ export enum TestIds {
 
 export const buttonUpdatePhrase = randomString(32);
 
-export const Vir_2022_08_18 = defineFunctionalElement({
+export const Vir_2022_08_18 = defineElementNoInputs({
     tagName: 'vir-2022-08-18',
-    props: {
+    stateInit: {
         inputValue: '',
     },
-    renderCallback: ({props, setProps}) => {
+    renderCallback: ({state, updateState}) => {
         return html`
             <input
                 ${listen('input', (event) => {
                     const inputElement = event.target as HTMLInputElement;
-                    setProps({
+                    updateState({
                         inputValue: inputElement.value,
                     });
                 })}
                 ${assignTestId(TestIds.Input)}
-                .value=${props.inputValue}
+                .value=${state.inputValue}
             />
             <button
                 ${assignTestId(TestIds.Button)}
                 ${listen('click', () => {
-                    setProps({
+                    updateState({
                         inputValue: buttonUpdatePhrase,
                     });
                 })}

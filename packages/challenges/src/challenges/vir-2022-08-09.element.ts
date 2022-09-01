@@ -1,9 +1,9 @@
-import {css, defineFunctionalElement, html} from 'element-vir';
+import {css, defineElementNoInputs, html} from 'element-vir';
 import {assignTestId} from '../test-helpers/test-id';
 
-export const Vir_2022_08_09 = defineFunctionalElement({
+export const Vir_2022_08_09 = defineElementNoInputs({
     tagName: 'vir-2022-08-09',
-    props: {},
+    stateInit: {},
     styles: css`
         .popup-trigger {
             display: inline-block;
