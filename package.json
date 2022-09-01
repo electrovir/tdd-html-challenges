@@ -26,7 +26,8 @@
         "spellcheck": "virmator spellcheck",
         "start": "npm install && cd packages/scripts && npm run combine && cd - && virmator frontend",
         "test": "virmator test-web",
-        "test:full": "npm test && npm run spellcheck && virmator format check"
+        "test:full": "npm run test:types && npm test && npm run spellcheck && virmator format check",
+        "test:types": "tsc --noEmit -p ./packages/challenges && tsc --noEmit -p ./packages/scripts"
     },
     "dependencies": {
         "augment-vir": "2.5.1",
