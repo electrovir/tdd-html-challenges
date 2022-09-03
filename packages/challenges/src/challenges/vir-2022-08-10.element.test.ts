@@ -1,4 +1,5 @@
 import {fixture as renderFixture} from '@open-wc/testing';
+import {visualDiff} from '@web/test-runner-visual-regression';
 import {html} from 'element-vir';
 import {Vir_2022_08_10} from './vir-2022-08-10.element';
 
@@ -8,10 +9,6 @@ describe(Vir_2022_08_10.tagName, () => {
             <${Vir_2022_08_10}></${Vir_2022_08_10}>
         `);
 
-        // // this command doesn't exist yet
-        // const result = await executeServerCommand('take-screenshot', {
-        //     derp: 5,
-        // });
-        // console.log({result});
+        await visualDiff(rendered, 'example-screenshot');
     });
 });

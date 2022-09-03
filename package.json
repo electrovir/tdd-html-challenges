@@ -26,7 +26,7 @@
         "spellcheck": "virmator spellcheck",
         "start": "npm install && cd packages/scripts && npm run combine && cd - && virmator frontend",
         "test": "virmator test-web",
-        "test:full": "npm run test:types && npm test && npm run spellcheck && virmator format check",
+        "test:full": "npm run test:types && npm test -- --check-pics-only&& npm run spellcheck && virmator format check",
         "test:types": "tsc --noEmit -p ./packages/challenges && tsc --noEmit -p ./packages/scripts"
     },
     "dependencies": {
@@ -36,6 +36,7 @@
     "devDependencies": {
         "@open-wc/testing": "3.1.6",
         "@web/test-runner-commands": "0.6.4",
+        "@web/test-runner-visual-regression": "0.6.6",
         "virmator": "3.0.6"
     }
 }
