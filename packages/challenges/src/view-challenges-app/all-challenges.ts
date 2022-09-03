@@ -6,6 +6,7 @@ import {Vir_2022_08_09} from '../challenges/vir-2022-08-09.element';
 import {Vir_2022_08_10} from '../challenges/vir-2022-08-10.element';
 import {Vir_2022_08_17} from '../challenges/vir-2022-08-17.element';
 import {Vir_2022_08_18} from '../challenges/vir-2022-08-18.element';
+import {Vir_2022_08_19} from '../challenges/vir-2022-08-19.element';
 import {Vir_2022_09_01} from '../challenges/vir-2022-09-01.element';
 
 /**
@@ -46,6 +47,10 @@ export const allChallenges: readonly Readonly<ChallengeDefinition>[] = [
     {
         element: Vir_2022_08_18,
         date: new Date('2022-08-18'),
+    },
+    {
+        element: Vir_2022_08_19,
+        date: new Date('2022-08-19'),
     },
     {
         element: Vir_2022_09_01,
