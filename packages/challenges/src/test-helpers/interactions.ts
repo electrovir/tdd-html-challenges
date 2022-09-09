@@ -59,7 +59,6 @@ export async function deleteAllTextInInput(inputElement: HTMLInputElement): Prom
     const lastValue = inputElement.value;
     if (lastValue) {
         if (!inputElement.matches(':focus')) {
-            console.error('not focused');
             await clickElement(inputElement);
         }
         await sendKeys({
